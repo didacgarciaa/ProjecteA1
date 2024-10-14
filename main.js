@@ -21,34 +21,58 @@ function main() {
     }
 
     for (let i = 0; i < 10; i++) {
-        let person = new Persona(personIds[i], personNames[i], personaAges[i]); // Asegúrate de pasar los parámetros en el orden correcto
+        let person = new Persona(personIds[i], personNames[i], personaAges[i]);
         persons.push(person);
     }
 
-    setImages(pets, persons); // Pasar también el array de personas
+    setImages(pets, persons);
 }
 
 function setImages(pets, persons) {
-    let petsGrid = document.getElementById('pets');
-    let personsGrid = document.getElementById('persons');
+    let petsGrid = document.getElementById('containerPets');
+    let personsGrid = document.getElementById('containerPersons');
 
     petsGrid.innerHTML = '';
     personsGrid.innerHTML = '';
 
     pets.forEach(pet => {
+        // Crear un div contenedor para la mascota
+        let petDiv = document.createElement('div');
+        petDiv.classList.add('pet-container'); // Añadir una clase para estilos si es necesario
+
         let img = document.createElement('img');
+        let name = document.createElement('label');
+
         img.src = pet.imageSrc;  
-        img.alt = pet.name;       
+        img.alt = pet.name;
+        name.innerHTML = pet.name;
+
         img.classList.add('pet-image'); 
-        petsGrid.appendChild(img);  
+        name.classList.add('pet-name');
+
+        petDiv.appendChild(img);
+        petDiv.appendChild(name);
+        petsGrid.appendChild(petDiv);  
     });
 
     persons.forEach(person => {
+        // Crear un div contenedor para la persona
+        let personDiv = document.createElement('div');
+        personDiv.classList.add('person-container'); // Añadir una clase para estilos si es necesario
+
         let img = document.createElement('img');
+        let name = document.createElement('label'); // Cambiar 'name' por 'label' para crear la etiqueta correctamente
+
         img.src = '/img/user.png';  
-        img.alt = person.name;       
+        img.alt = person.name;  
+        name.innerHTML = person.name;
+
         img.classList.add('person-image'); 
-        personsGrid.appendChild(img);  
+        name.classList.add('person-name');
+
+        personDiv.appendChild(img);  
+        personDiv.appendChild(name);  
+        personsGrid.appendChild(personDiv);  
     });
 }
 

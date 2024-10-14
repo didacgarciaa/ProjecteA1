@@ -1,39 +1,78 @@
-/* Contenedor principal para pets y persons */
-#container {
-    display: grid; /* Activamos el diseño de cuadrícula */
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-    gap: 10px; /* Espacio entre las columnas */
-    padding: 10px; 
+header {
+    display: flex;
+    background-color: #04a6bed8;
+    color: white; 
+    text-align: left; 
+    padding: 10px 0;
+    margin: 0;
 }
 
-/* Estilo para el grid de mascotas */
-#pets { 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: repeat(2, 1fr); 
-    gap: 10px; 
-    padding: 10px; 
+#logo {
+    max-width: 200px; 
+    height: auto;
+    margin-left: 5%;
 }
-
-/* Estilo para el grid de personas */
-#persons {
+#logContainer{
+    margin: 5%;
+    height: 700px;
+    border-radius: 10%;
+    background-color: #04a6bed8;
+}
+#main-container{
+    width: 100%;
+    height: 100%;
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+#container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 900px;
+    height: 500px;
+    gap: 10px;
+    padding: 10px; 
+}
+
+#containerPets { 
+    display: grid; 
+    margin-top: 5%;
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(2, 1fr); 
     gap: 10px; 
     padding: 10px; 
 }
 
-/* Estilo para las imágenes de mascotas */
-.pet-image {
-    width: 60%; 
-    height: auto; 
-    object-fit: cover; /* Corregido: no había cierre en el comentario */
+#containerPersons { 
+    display: grid;
+    margin-top: 5%;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 10px; 
+    padding: 10px; 
 }
 
-/* Estilo para las imágenes de personas */
-.person-image {
-    width: 60%;
+.pet-container,
+.person-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.pet-image {
+    width: 50%; 
     height: auto; 
-    object-fit: cover; /* Corregido: no había cierre en el comentario */
+    object-fit: cover; 
+}
+
+.person-image {
+    width: 50%;
+    height: auto; 
+    object-fit: cover; 
+}
+
+.pet-name,
+.person-name {
+    text-align: center; 
+    margin-top: 5px; 
 }

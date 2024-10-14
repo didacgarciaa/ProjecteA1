@@ -37,3 +37,47 @@
     height: auto; 
     object-fit: cover; /* Corregido: no había cierre en el comentario */
 }
+
+#contenedor-principal {
+    padding: 30px;
+    overflow: hidden;
+
+}
+
+#titulo-principal {
+    font-size: 48px;
+    color: #4CAF50;
+}
+
+#descripcion {
+    font-size: 24px;
+    color: #555;
+}
+
+#imatgeadopcio {
+    width: 100%; /* Asegúrate de que ocupe el 100% del contenedor */
+    height: 350px;
+    border-top: 2px solid gray; /* Borde superior gris */
+    border-bottom: 2px solid gray; /* Borde inferior gris */
+    box-sizing: border-box; /* Asegura que los bordes se incluyan en el ancho */
+    display: block; /* Elimina cualquier espacio en línea extra alrededor de la imagen */
+}
+
+
+#boton-entrar {
+    margin-top: 40px;
+   
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block; /* Permite centrar el botón */
+    text-align: center; /* Alinea el texto dentro del botón */
+}
+
+#boton-entrar:hover {
+    background-color: #45a049;
+}

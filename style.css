@@ -47,8 +47,7 @@ header {
     margin-top: 5%;
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(2, 1fr); 
-    gap: 10px; 
-    padding: 10px; 
+
 }
 
 .pet-container,
@@ -58,6 +57,23 @@ header {
     align-items: center; 
     justify-content: center; 
 }
+
+.person-adoptats {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+}
+    
+.log-paragraph {
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    line-height: 1.5; /* Mejora la legibilidad */
+    color: #333; /* Color del texto, puedes cambiarlo según tus necesidades */
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+    padding: 10px; /* Añade un poco de espacio alrededor del texto */
+}
+
+
 
 .pet-image {
     width: 50%; 

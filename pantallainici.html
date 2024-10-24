@@ -3,15 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página de Bienvenida</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #contenedor-principal {
+            text-align: center;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        #titulo-principal {
+            font-size: 48px;
+            color: #02253d;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        #descripcion {
+            font-size: 24px;
+            color: #02253d;
+            margin-bottom: 30px;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        #imatgeadopcio {
+            width: 30%;
+            height: auto;
+            border-radius: 10px;
+            margin: 0 auto;  
+            display: block; 
+            margin-bottom: 30px;
+            animation: fadeIn 1.4s ease-in;
+        }
+
+        #boton-entrar {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #02253d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #boton-entrar:hover {
+            background-color: #04a6bed8;
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="contenedor-principal">
-        <h1 id="titulo-principal">Benvingut a AdoptaUnaMascota</h1>
-        <p id="descripcion">Troba el teu nou millor amic</p>
-        <img id="imatgeadopcio">
-        <button id="boton-entrar">Entrar a la web</button>
+        <h1 id="titulo-principal">¡Bienvenido!</h1>
+        <p id="descripcion">Adopta una mascota hoy mismo.</p>
+        <img src="" alt="Imagen de Adopción" id="imatgeadopcio">
+        <button id="boton-entrar">Entrar</button>
     </div>
 
     <script type="module" src="pantallainici.js"></script>

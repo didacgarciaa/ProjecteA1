@@ -56,8 +56,8 @@ header {
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
-    width: 200px; 
-    height: 200px;
+    width: 140px; 
+    height: 140px;
 }
 
 .person-adoptats {
@@ -95,48 +95,19 @@ header {
     margin-top: 5px; 
 }
 
-#contenedor-principal {
-    padding: 30px;
-    overflow: hidden;
-
+.log-paragraph{
+    animation-duration: 0.5s;
+    animation-name: slidein;
 }
-
-#titulo-principal {
-    font-size: 48px;
-    color: #4CAF50;
-}
-
-#descripcion {
-    font-size: 24px;
-    color: #555;
-}
-
-#imatgeadopcio {
-    width: 100%; 
-    height: 350px;
-    border-top: 2px solid gray; 
-    border-bottom: 2px solid gray; 
-    box-sizing: border-box; 
-    display: block; 
-}
-
-
-#boton-entrar {
-    margin-top: 40px;
-   
-    padding: 15px 30px;
-    font-size: 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block; 
-    text-align: center; 
-}
-
-#boton-entrar:hover {
-    background-color: #45a049;
-}
-
-
+@keyframes slidein {
+    from {
+      margin-top: 100%;
+      margin-left: 80%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }

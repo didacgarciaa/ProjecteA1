@@ -4,7 +4,10 @@ import Persona from './Persona.js';
 function main() {
     let pets = [];
     let persons = [];
-    
+    let logo = document.getElementById('logo');
+    logo.addEventListener('click', (event)=>{
+        window.location.href = 'pantallainici.html';
+    })
     let petsNames = ['Jhon', 'Alice', 'Mike', 'Flert', 'Peter', 'Davis', 'Dan', 'Scooby', 'Wanda', 'Frank'];
     let petsImages = ['/img/dog1.png', '/img/dog2.png', '/img/dog3.png', '/img/dog4.png', '/img/cat1.png', '/img/cat2.png', '/img/cat3.png', '/img/cat4.png', '/img/fox1.png', '/img/rabbit1.png'];
     let petsType = ['dog', 'dog', 'dog', 'dog', 'cat', 'cat', 'cat', 'cat', 'rabbit', 'fox'];

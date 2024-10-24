@@ -1,5 +1,5 @@
 function main() {
-    let imatgeadopcio = '/img/campanya_socis-web.png'
+    let imatgeadopcio = '/img/perro.png'
     document.getElementById("imatgeadopcio").src = imatgeadopcio;
     const botonEntrar = document.getElementById("boton-entrar");
     

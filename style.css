@@ -56,6 +56,8 @@ header {
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
+    width: 200px; 
+    height: 200px;
 }
 
 .person-adoptats {
@@ -65,12 +67,12 @@ header {
 }
     
 .log-paragraph {
-    text-align: center; /* Centra el texto horizontalmente */
-    font-size: 16px; /* Ajusta el tamaño de la fuente */
-    line-height: 1.5; /* Mejora la legibilidad */
-    color: #333; /* Color del texto, puedes cambiarlo según tus necesidades */
-    margin: 0; /* Elimina el margen por defecto del párrafo */
-    padding: 10px; /* Añade un poco de espacio alrededor del texto */
+    text-align: center; 
+    font-size: 16px; 
+    line-height: 1.5; 
+    color: #333; 
+    margin: 0; 
+    padding: 10px;
 }
 
 
@@ -110,12 +112,12 @@ header {
 }
 
 #imatgeadopcio {
-    width: 100%; /* Asegúrate de que ocupe el 100% del contenedor */
+    width: 100%; 
     height: 350px;
-    border-top: 2px solid gray; /* Borde superior gris */
-    border-bottom: 2px solid gray; /* Borde inferior gris */
-    box-sizing: border-box; /* Asegura que los bordes se incluyan en el ancho */
-    display: block; /* Elimina cualquier espacio en línea extra alrededor de la imagen */
+    border-top: 2px solid gray; 
+    border-bottom: 2px solid gray; 
+    box-sizing: border-box; 
+    display: block; 
 }
 
 
@@ -129,10 +131,12 @@ header {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: inline-block; /* Permite centrar el botón */
-    text-align: center; /* Alinea el texto dentro del botón */
+    display: inline-block; 
+    text-align: center; 
 }
 
 #boton-entrar:hover {
     background-color: #45a049;
 }
+
+

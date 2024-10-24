@@ -5,17 +5,14 @@ function main() {
     let pets = [];
     let persons = [];
     
-    // Pet data
     let petsNames = ['Jhon', 'Alice', 'Mike', 'Flert', 'Peter', 'Davis', 'Dan', 'Scooby', 'Wanda', 'Frank'];
     let petsImages = ['/img/dog1.png', '/img/dog2.png', '/img/dog3.png', '/img/dog4.png', '/img/cat1.png', '/img/cat2.png', '/img/cat3.png', '/img/cat4.png', '/img/fox1.png', '/img/rabbit1.png'];
     let petsType = ['dog', 'dog', 'dog', 'dog', 'cat', 'cat', 'cat', 'cat', 'rabbit', 'fox'];
     
-    // Person data
     let personNames = ["John", "Emma", "Michael", "Sophia", "James", "Olivia", "David", "Ava", "Daniel", "Isabella"];
     let personaAges = [25, 32, 19, 27, 34, 22, 28, 31, 23, 30];
     let personIds = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110];
 
-    // Create pet and person instances
     for (let i = 0; i < 10; i++) {
         let pet = new Mascota(petsNames[i], petsType[i], petsImages[i]);
         pets.push(pet);
@@ -26,7 +23,6 @@ function main() {
         persons.push(person);
     }
 
-    // Set up the UI with the created pets and persons
     setImages(pets, persons);
 }
 
@@ -39,7 +35,6 @@ function setImages(pets, persons) {
     petsGrid.innerHTML = '';
     personsGrid.innerHTML = '';
 
-    // Add pets to the container
     pets.forEach((pet, index) => {
         let petDiv = document.createElement('div');
         petDiv.classList.add('pet-container');
@@ -65,7 +60,6 @@ function setImages(pets, persons) {
         petsGrid.appendChild(petDiv);
     });
 
-    // Add persons to the container and make them drop zones
     persons.forEach((person) => {
         let personDiv = document.createElement('div');
         personDiv.classList.add('person-container');
@@ -84,11 +78,10 @@ function setImages(pets, persons) {
 
         personDiv.appendChild(img);
         personDiv.appendChild(name);
-        personDiv.appendChild(divAdoptats); // Append the drop zone to the personDiv
+        personDiv.appendChild(divAdoptats);  
 
-        // Make the divAdoptats a drop zone
         personDiv.addEventListener('dragover', (event) => {
-            event.preventDefault(); // Allow the drop
+            event.preventDefault(); 
         });
 
         let dropCount = 0;
@@ -99,10 +92,9 @@ function setImages(pets, persons) {
             const droppedImage = document.getElementById(droppedImageId);
             const originalParent = droppedImage.parentElement;
             const adopciolog = document.getElementById("logContainer")
-            const label = originalParent.querySelector('label'); // Select the label within the same parent
+            const label = originalParent.querySelector('label');  
 
 
-            // Append the dragged image to this divAdoptats (drop zone)
             if (droppedImage && dropCount < 2) {
 
                 if (petsadopted.includes(droppedImage.id)) {
@@ -133,7 +125,7 @@ function setImages(pets, persons) {
 
                 adopciolog.appendChild(paragraphadopcio)
 
-                originalParent.style.backgroundColor = 'red'; // Change the background color of the original parent
+                originalParent.style.backgroundColor = 'red'; 
                 const cloneImage = droppedImage.cloneNode(true);
                 cloneImage.setAttribute("draggable", "false");
                 droppedImage.setAttribute("draggable", "true"); // Prevent dragging the original image
@@ -151,5 +143,4 @@ function setImages(pets, persons) {
     });
 }
 
-// Run the main function when the window is loaded
 window.addEventListener("load", main);

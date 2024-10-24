@@ -30,6 +30,8 @@ function main() {
 }
 
 function setImages(pets, persons) {
+    let petsadopted = [];
+
     let petsGrid = document.getElementById('containerPets');
     let personsGrid = document.getElementById('containerPersons');
 
@@ -46,8 +48,7 @@ function setImages(pets, persons) {
         img.src = pet.imageSrc;
         img.alt = pet.name;
         img.setAttribute("draggable", "true");
-        img.setAttribute("id", `animal${index}`);  
-        console.log(`animal${index}`)
+        img.setAttribute("id", `animal${index}`); // Assign a unique ID
 
         img.addEventListener('dragstart', (event) => {
             event.dataTransfer.setData('text/plain', img.id);
@@ -98,6 +99,28 @@ function setImages(pets, persons) {
 
 
             if (droppedImage && dropCount < 2) {
+
+                if (petsadopted.includes(droppedImage.id)) {
+                    console.log("mariconazo");
+                
+                    // Find the existing cloned image with the same ID in the entire document
+                    const existingClone = document.querySelector(`img[id="${droppedImage.id}"][draggable="false"]`);
+                
+                    if (existingClone) {
+                        existingClone.remove(); // This will remove the existing clone from the DOM
+                        
+                    } else {
+                        console.log("Clone not found with ID:", droppedImage.id);
+                    }
+                
+                    // Remove the ID from the petsadopted array
+                    const index = petsadopted.indexOf(droppedImage.id);
+                    if (index !== -1) {
+                        petsadopted.splice(index, 1);
+                    }
+                    
+                }
+                
                 
                 let paragraphadopcio = document.createElement("p");
                 paragraphadopcio.classList.add("log-paragraph")
@@ -108,11 +131,13 @@ function setImages(pets, persons) {
                 originalParent.style.backgroundColor = 'red'; 
                 const cloneImage = droppedImage.cloneNode(true);
                 cloneImage.setAttribute("draggable", "false");
-                droppedImage.setAttribute("draggable", "false");  
+                droppedImage.setAttribute("draggable", "true"); // Prevent dragging the original image
 
-                cloneImage.style.transform = "scale(0.5)";  
-                cloneImage.style.display = 'block';  
-                divAdoptats.appendChild(cloneImage);  
+                cloneImage.style.transform = "scale(0.5)"; // Scale the cloned image
+                cloneImage.style.display = 'block'; // Ensure the clone is displayed
+                divAdoptats.appendChild(cloneImage); // Append the cloned image to the drop zone
+                petsadopted.push(droppedImage.id);
+                console.log(petsadopted);
                 dropCount++;
             }
         });
